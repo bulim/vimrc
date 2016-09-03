@@ -39,18 +39,14 @@ tnoremap kj <C-\><C-n>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " use tommorow Colorscheme 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
-colorscheme Tomorrow
-set background=light
-highlight Normal ctermbg=None
-highlight nonText ctermbg=None
-" if has("gui_running")
-"   colorscheme Tomorrow
-" else
-"   " maor set light also here:
-"   set background=light
-"   colorscheme Tomorrow
-" endif
+
+if has("gui_running")
+   colorscheme Tomorrow
+ else
+   " maor set light also here:
+   set background=light
+   colorscheme Tomorrow
+ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " make Y consistent with all the other capital letter commands
