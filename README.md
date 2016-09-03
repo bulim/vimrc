@@ -1,4 +1,4 @@
-# The Ultimate vimrc 2.0
+# The Ultimate vimrc 3.0
 
 Over the past year, I've been trying to perfect [Amix's Ultimate Vimrc](https://github.com/amix/vimrc).
 This is the result. Amix did an awesome job on his Ultimate vimrc project. Below is a list of [reasons for the fork](#why-the-fork).
