@@ -4,15 +4,19 @@ Over the past year, I've been trying to perfect [Amix's Ultimate Vimrc](https://
 This is the result. Amix did an awesome job on his Ultimate vimrc project. Below is a list of [reasons for the fork](#why-the-fork).
 
 ## How to install?
-
-	git clone https://github.com/pazams/vimrc2.git ~/.vim_runtime3
+1. run this:
+```bash
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
+	git clone https://github.com/bulim/vimrc.git ~/.vim_runtime3
 	sh ~/.vim_runtime3/install.sh
+```
+2. Inside vim, run this: 
 
-* note the paths allows this project to co-exist with Amix's project.
-
-## How to install on Windows?
-
-Use [msysgit](http://msysgit.github.com/) to checkout the repository and run the installation instructions above. No special instructions needed ;-)
+```
+	:PlugInstall
+```
 
 ## How to update to latest version?
 
