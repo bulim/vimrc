@@ -33,6 +33,6 @@ Plug 'plasticboy/vim-markdown', { 'commit': '2.0.0'}
 Plug 'SirVer/ultisnips', { 'tag': '3.1' } | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
 
 " color scheme
-Plug 'chriskempson/vim-tomorrow-theme', { 'tag': 'v1.0' } 
+Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' } " ('tag': 'v1.0' is 3 years behind lastest commit..)
 
 call plug#end()

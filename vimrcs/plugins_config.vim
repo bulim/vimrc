@@ -77,8 +77,6 @@ let g:multi_cursor_next_key="\<C-s>"
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme="molokai"
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
