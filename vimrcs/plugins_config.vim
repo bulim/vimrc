@@ -1,14 +1,4 @@
 """"""""""""""""""""""""""""""
-" => Load pathogen paths
-""""""""""""""""""""""""""""""
-call pathogen#infect('~/.vim_runtime2/sources/include/core/{}')
-call pathogen#infect('~/.vim_runtime2/sources/include/snippets/{}')
-call pathogen#infect('~/.vim_runtime2/sources/include/languages/{}')
-call pathogen#infect('~/.vim_runtime2/sources/include/color-schemes/{}')
-call pathogen#helptags()
-
-
-""""""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
@@ -18,6 +8,8 @@ map <c-b> :CtrlPBuffer<cr>
 map <leader>m :CtrlPMixed<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 
 """"""""""""""""""""""""""""""
 " => MRU via CTRL-P plugin
@@ -72,13 +64,12 @@ nmap <A-L> :NERDTreeFind<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:multi_cursor_next_key="\<C-s>"
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme="molokai"
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
