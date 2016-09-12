@@ -29,26 +29,3 @@ else
   vnoremap <leader>d "*d
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map escape    
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-imap kj <Esc>
-tnoremap kj <C-\><C-n>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" use tommorow Colorscheme 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if has("gui_running")
-   colorscheme Tomorrow
- else
-   " maor set light also here:
-   set background=light
-   colorscheme Tomorrow
- endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" make Y consistent with all the other capital letter commands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap Y y$
