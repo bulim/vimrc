@@ -44,6 +44,6 @@ Plug 'fatih/vim-go', { 'tag': 'v1.8'}
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
 
 " color scheme
-Plug 'chriskempson/vim-tomorrow-theme', { 'tag': 'v1.0' } 
+Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' }
 
 call plug#end()
