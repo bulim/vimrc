@@ -31,11 +31,9 @@ source ~/.vim_runtime3/vimrcs/opinionated/d-is-for-delete.vim
 source ~/.vim_runtime3/vimrcs/opinionated/escape-key.vim
 source ~/.vim_runtime3/vimrcs/opinionated/yank.vim
 source ~/.vim_runtime3/vimrcs/opinionated/experiment.vim
-
+try
+  source ~/.vim_runtime3/vimrcs/my-configs.vim
+catch
 ' > ~/.vimrc
 
 echo "Installed vimrc 3.0 successfully!"
-
-
-
-
