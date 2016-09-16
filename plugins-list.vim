@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
 Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
-Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} | Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }
+Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} "| Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }  removed since https://github.com/scrooloose/syntastic/issues/1391
 Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
 Plug 'scrooloose/syntastic', { 'commit': '0bedeb9' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
