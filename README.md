@@ -35,16 +35,6 @@ Simply just do a git rebase!
 ### javascript related (requires nodeJS):
 * jshint for syntastic: 'npm install -g jshint'
 
-### AutoComplete
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) is my recommanded plugin for auto complete functionality. However, it is not included since it has an install step with custom engines that's better left for each to decide. It's recommnded to read it's readme. Here's a snippet to get up and running with YouCompleteMe with [tern](http://ternjs.net/) based javascript completion, assuming folder strcture after installing The Ultimate vimrc 2.0:
-```
-cd ~/.vim_runtime3/sources/include/core
-git clone https://github.com/Valloric/YouCompleteMe.git
-cd YouCompleteMe
-git submodule update --init --recursive
-./install.py --tern-completer
-```
-
 ### windows
 * windows users should consider installing python, as some plugins require it 
 
@@ -56,11 +46,10 @@ git config --global merge.tool vimdiff
 
 Here is a partial list of the included plugins. Read the docs of these plugins to understand them better. 
 
-* [pathogen.vim](https://github.com/tpope/vim-pathogen): Manages the runtime path of the plugins
+* [vim-plug](https://github.com/junegunn/vim-plug): Manages plugins
 * [UltiSnips](https://github.com/SirVer/ultisnips): UltiSnips - The ultimate snippet solution for Vim
 * [NERDTree](https://github.com/scrooloose/nerdtree): A tree explorer plugin for vim
 * [NERDTree-tabs](https://github.com/jistr/vim-nerdtree-tabs): NERDTree and tabs together in Vim, painlessly 
-* [vim-easygrep](https://github.com/dkprice/vim-easygrep): Fast and Easy Find and Replace Across Multiple Files
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim): Fuzzy file, buffer, mru and tag finder. In my config it's mapped to `<Ctrl+F>`, or <leader>j
 * [vim-airline](https://github.com/bling/vim-airline): Lean & mean status/tabline for vim that's light as air (replacing powerline)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal
@@ -69,16 +58,14 @@ Here is a partial list of the included plugins. Read the docs of these plugins t
 ## Included color schemes
 
 * [vim-tomorrow-theme](https://github.com/chriskempson/vim-tomorrow-theme)
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 ## How to include your own stuff?
 
-After you have installed the setup you can create **~/.vim_runtime3/vimrcs/my_configs.vim** to fill in any configurations that are important for you. For instance, [here is see my personal, opinionated configuration](https://gist.github.com/pazams/216856a04eabe1cd8bda)
+You can also install your own plugins, just edit `~/.vim_runtime3/plugins-list.vim`, and then inside vim:
 
-You can also install your own plugins, for instance, via pathogen we can install [vim-rails](https://github.com/tpope/vim-rails):
-
-	cd ~/.vim_runtime3/sources/core/
-	git clone git://github.com/tpope/vim-rails.git 
+```
+	:PlugInstall
+```
 	
 ## Key Mappings
 
@@ -272,11 +259,11 @@ Vimscript mappings:
 
 # Why the fork?
 
-* Restructured plugins directories into: color-schemes  core  languages  snippets
+* Use vim-plug to list plugin dependencies (rather than hold plugin sources).
 * Added neovim bindings
 * Use [ctrlp.vim](https://github.com/kien/ctrlp.vim) as the default for MRU and Buffer explorer
 * replaced zencoding with emmet
-* yankring  (considered yankstack, but decided this job is for [OS clipboard managers](http://unix.stackexchange.com/questions/15497/are-there-any-advanced-clipboard-managers-for-linux) )
+* dropped yankring (considered yankstack, but decided this job is for [OS clipboard managers](http://unix.stackexchange.com/questions/15497/are-there-any-advanced-clipboard-managers-for-linux) )
 * replaced snipmate  with ultisnips   
 * replaced taglist   with tagbar
 * added nerdtree-tabs
