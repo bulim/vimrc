@@ -38,7 +38,7 @@ Plug 'mattn/emmet-vim', { 'commit': 'f4b097a' }
 Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
 Plug 'nvie/vim-flake8', { 'tag': '1.6' }
 Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
-Plug 'fatih/vim-go', { 'tag': 'v1.8'}
+Plug 'fatih/vim-go', { 'tag': 'v1.8', 'do': ':GoInstallBinaries'}
 
 " snippets plugins
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
