@@ -11,3 +11,10 @@ function! s:JavaScriptFold ()
     endfunction
     setl foldtext=FoldText()
 endfunction
+
+" automatically fix js errors using eslint fix flag when calling the eslintfix function
+command! EslintFix call s:EslintFix()
+function! s:EslintFix ()
+  execute "!" . "eslint" . " " . "--fix". " " . bufname("%")
+endfunction
+

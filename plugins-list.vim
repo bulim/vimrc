@@ -14,7 +14,7 @@ Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
 Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} | Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }
 Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
-Plug 'scrooloose/syntastic', { 'commit': '0bedeb9' }
+Plug 'scrooloose/syntastic', { 'commit': 'f4b6c80' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 Plug 'majutsushi/tagbar', { 'tag': 'v2.6.1' }
@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter', { 'commit': '26c6b54' }
 Plug 'tpope/vim-obsession', { 'commit': 'ad1ef9a'}
 Plug 'tpope/vim-repeat', { 'tag': 'v1.1'}
 Plug 'airblade/vim-rooter', { 'commit': '70c105c'}
-Plug 'tpope/vim-surround', { 'tag': 'v2.1'}
+Plug 'tpope/vim-surround', { 'commit': 'e49d6c2'}
 Plug 'amix/vim-zenroom2', { 'commit': '948734e'}
 Plug 'gabrielelana/vim-markdown'
 
