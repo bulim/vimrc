@@ -221,11 +221,13 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
+
+" split line at cursor when pressing capital K. replaces man help for word under cursor
+nnoremap K i<CR><Esc>
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -257,10 +259,12 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
 " Open Ag and put the cursor in the right position
-map <leader>g :Ack!<space>
+nmap <leader>g :Ack!<space>
+vnoremap <silent> <leader>g :call VisualSelection('gv', '')<CR>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+vnoremap <silent> <leader>f :call VisualSelection('f', '')<CR>
 
 " Do :help cope if you are unsure what cope is. It's super useful!
 "
@@ -327,7 +331,7 @@ function! VisualSelection(direction, extra_filter) range
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
-        call CmdLine("Ag \"" . l:pattern . "\" " )
+        call CmdLine("Ack! \"" . l:pattern . "\" " )
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'

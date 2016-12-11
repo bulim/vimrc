@@ -19,8 +19,10 @@ source ~/.vim_runtime3/vimrcs/filetypes/javascript.vim
 source ~/.vim_runtime3/vimrcs/filetypes/json.vim
 source ~/.vim_runtime3/vimrcs/filetypes/python.vim
 source ~/.vim_runtime3/vimrcs/filetypes/go.vim
+source ~/.vim_runtime3/vimrcs/filetypes/clojure.vim
 
 source ~/.vim_runtime3/vimrcs/plugins-config/plugins-config.vim
+source ~/.vim_runtime3/vimrcs/plugins-config/nerdtree.vim
 
 if has('"'"'nvim'"'"')
   source ~/.vim_runtime3/vimrcs/neovim/neovim.vim
@@ -34,6 +36,7 @@ source ~/.vim_runtime3/vimrcs/opinionated/experiment.vim
 try
   source ~/.vim_runtime3/vimrcs/my-configs.vim
 catch
+endtry
 ' > ~/.vimrc
 
 echo "Installed vimrc 3.0 successfully!"

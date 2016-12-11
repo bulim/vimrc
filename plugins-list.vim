@@ -27,8 +27,13 @@ Plug 'tpope/vim-obsession', { 'commit': 'ad1ef9a'}
 Plug 'tpope/vim-repeat', { 'tag': 'v1.1'}
 Plug 'airblade/vim-rooter', { 'commit': '70c105c'}
 Plug 'tpope/vim-surround', { 'commit': 'e49d6c2'}
+Plug 'tommcdo/vim-exchange', { 'commit': 'b1cae92'}
 Plug 'amix/vim-zenroom2', { 'commit': '948734e'}
 Plug 'gabrielelana/vim-markdown'
+Plug 'ervandew/supertab'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " languages plugins
 Plug 'moll/vim-node', { 'tag': 'v0.8.1'}
@@ -39,9 +44,11 @@ Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
 Plug 'nvie/vim-flake8', { 'tag': '1.6' }
 Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
 Plug 'fatih/vim-go', { 'tag': 'v1.8'}
+Plug 'leafgarland/typescript-vim'
 
 " snippets plugins
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'rizzatti/dash.vim'
 
 " color scheme
 Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' }
