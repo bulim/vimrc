@@ -14,7 +14,8 @@ let g:ctrlp_max_depth=40
 """"""""""""""""""""""""""""""
 " => MRU via CTRL-P plugin
 """"""""""""""""""""""""""""""
-map <leader>f :CtrlPMRU<cr>
+" avoid collision with local find, vnoremap <leader>f
+nnoremap <leader>f :CtrlPMRU<cr> 
 
 
 """"""""""""""""""""""""""""""
