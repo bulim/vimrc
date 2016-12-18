@@ -42,7 +42,7 @@ set grepprg=/bin/grep\ -nH
 " => ack with silver searcher (ag)
 """"""""""""""""""""""""""""""
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --column'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
