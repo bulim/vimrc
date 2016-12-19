@@ -8,3 +8,4 @@ if has('nvim')
      nmap <BS> <C-W>h
  endif
 map <leader>tt :terminal<cr>
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
