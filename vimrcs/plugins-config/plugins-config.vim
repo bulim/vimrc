@@ -2,7 +2,6 @@
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_map = '<c-f>'
 map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 map <leader>m :CtrlPMixed<cr>
@@ -14,7 +13,8 @@ let g:ctrlp_max_depth=40
 """"""""""""""""""""""""""""""
 " => MRU via CTRL-P plugin
 """"""""""""""""""""""""""""""
-map <leader>f :CtrlPMRU<cr>
+" avoid collision with local find, vnoremap <leader>f
+nnoremap <leader>f :CtrlPMRU<cr> 
 
 
 """"""""""""""""""""""""""""""
