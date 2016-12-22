@@ -16,7 +16,8 @@ RUN \
     apt-get install -y make gcc g++ automake autoconf libc6-dev build-essential libtool openssl libssl-dev libxslt-dev libxml2-dev && \
     apt-get install -y gfortran libopenblas-dev liblapack-dev python-dev && \
     apt-get install -y libsqlite3-dev libbz2-dev libxslt1-dev libffi-dev ncurses-dev cmake && \
-    apt-get install -y software-properties-common byobu curl git htop man unzip vim wget supervisor && \
+    apt-get install -y software-properties-common byobu curl git htop man unzip vim wget supervisor vim-gnome xclip xsel && \
+    apt-get install -y nodejs npm silversearcher-ag && \
     rm -rf /var/lib/apt/lists/*
 
 RUN \
@@ -69,7 +70,6 @@ RUN \
 # Install plugins
 RUN vim +PlugInstall +qall
 
-
 # Set environment variables.
 ENV HOME /root
 
@@ -81,3 +81,21 @@ WORKDIR /root
 
 # Define default command.
 CMD ["bash"]
+
+# Crucial instructions for mac users to enable clipboard tunneling: 
+# 1. make sure XQuartz is installed and running
+# 2. make sure allow connections in xquartz is enabled.
+# 3. make sure to open xquartz app from iterm after xquartz is opened using : open -a XQuartz
+# 4. get your display ip using the following command (for multiple displays the solution is currently not tested): 
+# IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}') xhost + $IP
+
+# to automatically add ip to xhost add the following lines to your bashrc file
+# export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+# xhost + $IP
+
+# Based on the following links: 
+# https://forums.docker.com/t/how-to-run-gui-apps-in-containiers-in-osx-docker-for-mac/17797/7
+# https://fredrikaverpil.github.io/2016/07/31/docker-for-mac-and-gui-applications/
+
+# 5. docker run with the following command : 
+# docker run -it -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix neovimtest:one bash
