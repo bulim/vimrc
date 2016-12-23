@@ -11,18 +11,20 @@ endfunction
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
+Plug 'dkprice/vim-easygrep'
 Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} | Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }
 Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
 Plug 'scrooloose/syntastic', { 'commit': 'f4b6c80' }
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" While building the nvim container im commenting it out because it takes forever!
+" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 Plug 'majutsushi/tagbar', { 'tag': 'v2.6.1' }
 Plug 'tomtom/tcomment_vim', { 'tag': 'v201' }
 Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
 Plug 'vim-airline/vim-airline', { 'tag': 'v0.8' } | Plug 'vim-airline/vim-airline-themes', { 'commit': '020b843' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
-Plug 'airblade/vim-gitgutter', { 'commit': '26c6b54' }
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-obsession', { 'commit': 'ad1ef9a'}
 Plug 'tpope/vim-repeat', { 'tag': 'v1.1'}
 Plug 'airblade/vim-rooter', { 'commit': '70c105c'}
@@ -52,5 +54,5 @@ Plug 'rizzatti/dash.vim'
 
 " color scheme
 Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' }
-
+Plug 'sickill/vim-monokai'
 call plug#end()
