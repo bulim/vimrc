@@ -76,9 +76,6 @@ ENV HOME /root
 # for ultisnips or ycm
 ENV PYTHON_CONFIGURE_OPTS "--enable-shared"
 
-# Define working directory.
-WORKDIR /root
-
 # Define default command.
 CMD ["bash"]
 
