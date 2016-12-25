@@ -10,49 +10,39 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
-Plug 'dkprice/vim-easygrep'
-Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
-Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} | Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }
-Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
-Plug 'scrooloose/syntastic', { 'commit': 'f4b6c80' }
-" While building the nvim container im commenting it out because it takes forever!
-" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-
-Plug 'majutsushi/tagbar', { 'tag': 'v2.6.1' }
-Plug 'tomtom/tcomment_vim', { 'tag': 'v201' }
-Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
-Plug 'vim-airline/vim-airline', { 'tag': 'v0.8' } | Plug 'vim-airline/vim-airline-themes', { 'commit': '020b843' }
-Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
+Plug 'mileszs/ack.vim'
+Plug 'jasoncodes/ctrlp-modified.vim' | Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-abolish'
+Plug 'vim-airline/vim-airline'| Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-obsession', { 'commit': 'ad1ef9a'}
-Plug 'tpope/vim-repeat', { 'tag': 'v1.1'}
-Plug 'airblade/vim-rooter', { 'commit': '70c105c'}
-Plug 'tpope/vim-surround', { 'commit': 'e49d6c2'}
-Plug 'tommcdo/vim-exchange', { 'commit': 'b1cae92'}
-Plug 'amix/vim-zenroom2', { 'commit': '948734e'}
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-rooter'
+Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-exchange'
+Plug 'amix/vim-zenroom2'
 Plug 'gabrielelana/vim-markdown'
 Plug 'ervandew/supertab'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-
-" languages plugins
-Plug 'moll/vim-node', { 'tag': 'v0.8.1'}
-Plug 'pangloss/vim-javascript', { 'tag': 'v1.1.3'}
-Plug 'othree/yajs.vim', { 'tag': '1.6'}
-Plug 'mattn/emmet-vim', { 'commit': 'f4b097a' }
-Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
-Plug 'nvie/vim-flake8', { 'tag': '1.6' }
-Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
-Plug 'fatih/vim-go', { 'tag': 'v1.8'}
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'mattn/emmet-vim'
+Plug 'groenewege/vim-less'
+Plug 'nvie/vim-flake8'
+Plug 'chase/vim-ansible-yaml'
+Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
-
-" snippets plugins
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'rizzatti/dash.vim'
-
-" color scheme
-Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' }
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'sickill/vim-monokai'
 call plug#end()
