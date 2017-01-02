@@ -22,7 +22,7 @@ Plug 'tomtom/tcomment_vim', { 'tag': 'v201' }
 Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
 Plug 'vim-airline/vim-airline', { 'tag': 'v0.8' } | Plug 'vim-airline/vim-airline-themes', { 'commit': '020b843' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.2' }
-Plug 'airblade/vim-gitgutter', { 'commit': '26c6b54' }
+Plug 'airblade/vim-gitgutter', { 'commit': '7b81a8a' }
 Plug 'tpope/vim-obsession', { 'commit': 'ad1ef9a'}
 Plug 'tpope/vim-repeat', { 'tag': 'v1.1'}
 Plug 'airblade/vim-rooter', { 'commit': '70c105c'}
