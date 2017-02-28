@@ -14,7 +14,7 @@ Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
 Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} "| Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }  removed since https://github.com/scrooloose/syntastic/issues/1391
 Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
-Plug 'scrooloose/syntastic', { 'commit': '0bedeb9' }
+Plug 'scrooloose/syntastic', { 'commit': '32a3754' }
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 Plug 'majutsushi/tagbar', { 'tag': 'v2.6.1' }
@@ -39,6 +39,7 @@ Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
 Plug 'nvie/vim-flake8', { 'tag': '1.6' }
 Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
 Plug 'fatih/vim-go', { 'tag': 'v1.8', 'do': ':GoInstallBinaries'}
+Plug 'mxw/vim-jsx', { 'commit': 'eb656ed'}
 
 " snippets plugins
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
