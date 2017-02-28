@@ -84,7 +84,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -107,6 +107,11 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => JSX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
