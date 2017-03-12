@@ -5,3 +5,5 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
 
+nnoremap H gT
+nnoremap L gt
