@@ -2,12 +2,11 @@
 "       Based on Amir Salihefendic's ultimate virmc project 
 "       https://github.com/amix/vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=500
+set history=10000
 
 " Enable filetype plugins
 filetype plugin on
@@ -34,7 +33,6 @@ map <leader>q :q<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -57,6 +55,7 @@ if has("win16") || has("win32")
 else
     set wildignore+=.git\*,.hg\*,.svn\*
 endif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 "Always show current position
 set ruler
@@ -218,6 +217,7 @@ endtry
 set laststatus=2
 
 " Format the status line
+" Not used when airline plugin is enabled
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -228,19 +228,6 @@ map 0 ^
 
 " split line at cursor when pressing capital K. replaces man help for word under cursor
 nnoremap K i<CR><Esc>
-
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -304,6 +291,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scribble
 map <leader>bs :e ~/buffer<cr>
+map <leader>bh :e ~/.zsh_history<cr>
 
 " Quickly open a markdown buffer for scribble
 map <leader>bm :e ~/buffer.md<cr>
@@ -341,7 +329,6 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
 
 " Returns true if paste mode is enabled
 function! HasPaste()
