@@ -49,37 +49,11 @@ let g:goyo_margin_bottom = 2
 
 nnoremap <silent> <leader>z :Goyo<cr>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntastic (syntax checker)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:syntastic_python_checkers=['flake8']
-" let g:syntastic_javascript_checkers = ['eslint']
-"
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-"
-" let g:syntastic_html_tidy_ignore_errors=[
-"     \'proprietary attribute "ng-',
-"     \'proprietary attribute "bs-',
-"     \'proprietary attribute "nv-'
-" \]
-" " Custom CoffeeScript SyntasticCheck
-" func! SyntasticCheckCoffeescript()
-"     let l:filename = substitute(expand("%:p"), '\(\w\+\)\.coffee', '.coffee.\1.js', '')
-"     execute "e " . l:filename
-"     execute "SyntasticCheck"
-"     execute "Errors"
-" endfunc
-" nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
-
 let g:ale_fixers = {
-\   'javascript': ['eslint']
+\   'javascript': ['prettier', 'eslint']
 \}
 let g:ale_linters = {
-\   'javascript': ['eslint', 'standard', 'prettier-eslint'],
+\   'javascript': ['prettier'],
 \}
 let g:ale_fix_on_save=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
