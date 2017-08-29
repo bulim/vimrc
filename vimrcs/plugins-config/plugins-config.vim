@@ -14,7 +14,7 @@ let g:ctrlp_max_depth=40
 " => MRU via CTRL-P plugin
 """"""""""""""""""""""""""""""
 " avoid collision with local find, vnoremap <leader>f
-nnoremap <leader>f :CtrlPMRU<cr> 
+nnoremap <leader>f :CtrlPMRU<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -85,6 +85,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.eslintrc"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -136,25 +137,12 @@ let g:ycm_goto_buffer_command = 'vertical-split'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => resolve YouCompleteMe & UltiSnips Conflicts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
