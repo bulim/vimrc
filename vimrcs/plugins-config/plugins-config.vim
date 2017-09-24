@@ -53,9 +53,10 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint']
 \}
 let g:ale_linters = {
-\   'javascript': ['prettier'],
+\   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save=1
+let g:ale_javascript_prettier_options = '--single-quote'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,3 +93,14 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:instant_markdown_autostart = 0
 " let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => emmet expand snippet with tab
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user_emmet_leader_key='<C-Z>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-jsx on regular js files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
