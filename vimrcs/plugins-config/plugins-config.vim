@@ -50,7 +50,8 @@ let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>z :Goyo<cr>
 
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint']
+\   'javascript': ['prettier', 'eslint'], 
+\   'python': ['autopep8']
 \}
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -104,3 +105,12 @@ let g:user_emmet_leader_key='<C-Z>'
 " => vim-jsx on regular js files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimux keybindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:arpeggio_timeoutlen = 200
+call arpeggio#map('n', '', 0, 'vl', ':VimuxRunLastCommand<CR>')
+call arpeggio#map('n', '', 0, 'vq', ':VimuxCloseRunner<CR>')
+call arpeggio#map('n', '', 0, 'vp', ':VimuxPromptCommand<CR>')
+call arpeggio#map('n', '', 0, 'vz', ':VimuxZoomRunner<CR>')

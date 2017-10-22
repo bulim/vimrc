@@ -7,7 +7,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=10000
-
+set shada=!,'1000,<50,s10,h
+set shell=zsh\ -l
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
