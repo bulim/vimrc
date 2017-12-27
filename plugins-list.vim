@@ -30,7 +30,7 @@ Plug 'tpope/vim-surround', { 'tag': 'v2.1'}
 Plug 'amix/vim-zenroom2', { 'commit': '948734e'}
 Plug 'gabrielelana/vim-markdown'
 Plug 'ervandew/supertab', { 'commit': 'cdaa5c2' }
-Plug 'editorconfig/editorconfig-vim', { 'commit': 'a069da8' }
+Plug 'editorconfig/editorconfig-vim', { 'commit': '0abb063' }
 
 " languages plugins
 Plug 'moll/vim-node', { 'tag': 'v0.8.1'}
@@ -43,6 +43,7 @@ Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
 Plug 'fatih/vim-go', { 'tag': 'v1.8', 'do': ':GoInstallBinaries'}
 Plug 'mxw/vim-jsx', { 'commit': 'eb656ed'}
 Plug 'davidhalter/jedi-vim', { 'commit': '0c6a2b7'}
+Plug 'vim-python/python-syntax', { 'commit': '58d6e01'}
 " Plug 'python-rope/ropevim', { 'commit': 'ab87505'}
 
 " snippets plugins

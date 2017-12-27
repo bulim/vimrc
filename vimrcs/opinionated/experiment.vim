@@ -22,13 +22,10 @@ nmap ffy :let @+ = expand("%:p")<CR>
 " comment to enable YCM
 let g:loaded_youcompleteme = 1
 
-" omment to disable jedi
+" comment to disable jedi
 let g:jedi#auto_initialization = 0
 
 " let g:jedi#force_py_version = 3
-"
-"
-"
 
 let g:python3_host_prog='/Users/moezamski/.virtualenvs/ce/bin/python3'
 
@@ -58,17 +55,25 @@ autocmd BufRead,BufNewFile   *.go nnoremap gd :GoDef<cr>
 autocmd FileType python map <leader>y :call Flake8()<CR>
 
 
+""""""""""""""""""""""""""""""
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
-" debugging.... python.vim
-autocmd BufNewFile,BufRead *.py
-    \ set expandtab           " enter spaces when tab is pressed
-    \ set textwidth=120       " break lines when line length increases
-    \ set tabstop=4           " use 4 spaces to represent tab
-    \ set softtabstop=4
-    \ set shiftwidth=4        " number of spaces to use for auto indent
-    \ set autoindent          " copy indent from current line when starting a new line
-    \ setlocal noautoindent
-    \ setlocal nocindent
-    \ setlocal nosmartindent
-    \ setlocal indentexpr=
 
+" Python note:
+" pip3 install pylint flake8 pyflakes --user
+
+function! CleanNoNameEmptyBuffers()
+    let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 && (getbufline(v:val, 1, "$") == [""])')
+    if !empty(buffers)
+        exe 'bd '.join(buffers, ' ')
+    else
+        echo 'No buffer deleted'
+    endif
+endfunction
+
+nnoremap <silent> ,C :call CleanNoNameEmptyBuffers()<CR>
+
+"Disables new line insertions
+"set textwidth=0 wrapmargin=0
+
+echom "Successfully applied experiment.vim"
