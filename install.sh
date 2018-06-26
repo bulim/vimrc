@@ -6,8 +6,6 @@ source ~/.vim_runtime3/plugins-list.vim
 source ~/.vim_runtime3/vimrcs/basic/basic.vim
 source ~/.vim_runtime3/vimrcs/basic/buffers.vim
 source ~/.vim_runtime3/vimrcs/basic/folds.vim
-source ~/.vim_runtime3/vimrcs/basic/jumps.vim
-source ~/.vim_runtime3/vimrcs/basic/tabs.vim
 source ~/.vim_runtime3/vimrcs/basic/windows.vim
 
 source ~/.vim_runtime3/vimrcs/extended/gui.vim
