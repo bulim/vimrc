@@ -29,14 +29,3 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Close all empty buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! CleanEmptyBuffers call s:CleanEmptyBuffers()
-function! s:CleanEmptyBuffers()
-  let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
-  if !empty(buffers)
-    exe 'bw '.join(buffers, ' ')
-  endif
-endfunction

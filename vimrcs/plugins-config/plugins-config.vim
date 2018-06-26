@@ -4,6 +4,7 @@
 map <leader>o :Buffers<cr>
 map <leader>m :Files ~/compliance/<cr>
 map <leader>f :Files<cr>
+map <leader>a :Ag<cr>
 nnoremap <leader>h :History<cr>
 
 """"""""""""""""""""""""""""""
@@ -49,15 +50,20 @@ let g:goyo_margin_bottom = 2
 
 nnoremap <silent> <leader>z :Goyo<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ale linters
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'], 
-\   'python': ['autopep8']
+\   'python': ['autopep8', 'yapf']
 \}
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': ['autopep8', 'flake8', 'isort', 'yapf']
 \}
 let g:ale_fix_on_save=1
 let g:ale_javascript_prettier_options = '--single-quote'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Fugitive
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,25 +72,6 @@ augroup hidefugitivebuffers
     autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set <F12>=<C-v><F12>
-set <F10>=<C-v><F10>
-
-nnoremap <leader>yr :YcmRestartServer<cr>
-nnoremap <F12> :YcmCompleter GoToDefinition<cr>
-nnoremap <F10> :YcmCompleter GoToReferences<cr>
-let g:ycm_goto_buffer_command = 'vertical-split'
-let g:ycm_autoclose_preview_window_after_completion = 1
-" taken from https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
-" and http://stackoverflow.com/a/18685821
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => resolve YouCompleteMe & UltiSnips Conflicts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
@@ -95,6 +82,7 @@ let g:instant_markdown_autostart = 0
 " let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 
+let g:sneak#use_ic_scs = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => emmet expand snippet with tab
@@ -107,10 +95,57 @@ let g:user_emmet_leader_key='<C-Z>'
 let g:jsx_ext_required = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimux keybindings
+" => editorconfig key bindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:arpeggio_timeoutlen = 200
-call arpeggio#map('n', '', 0, 'vl', ':VimuxRunLastCommand<CR>')
-call arpeggio#map('n', '', 0, 'vq', ':VimuxCloseRunner<CR>')
-call arpeggio#map('n', '', 0, 'vp', ':VimuxPromptCommand<CR>')
-call arpeggio#map('n', '', 0, 'vz', ':VimuxZoomRunner<CR>')
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim language server protocol
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['~/.config/yarn/global/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'javascript.jsx': ['~/.config/yarn/global/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ 'python': ['~/.pyenv/shims/pyls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+autocmd FileType javascript nnoremap <buffer>
+  \ <leader>lf :call LanguageClient_textDocument_documentSymbol()<cr>
+autocmd FileType javascript.jsx nnoremap <buffer>
+  \ <leader>lf :call LanguageClient_textDocument_documentSymbol()<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Inc search 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" Farewell, nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>! This feature turns 'hlsearch' off automatically after searching-related motions.
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+augroup incsearch-keymap
+    autocmd!
+    autocmd VimEnter call s:incsearch_keymap()
+augroup END
+function! s:incsearch_keymap()
+    " IncSearchNoreMap <Right> <Over>(incsearch-next)
+    " IncSearchNoreMap <Left>  <Over>(incsearch-prev)
+    " IncSearchNoreMap <Down>  <Over>(incsearch-scroll-f)
+    " IncSearchNoreMap <Up>    <Over>(incsearch-scroll-b)
+endfunction

@@ -16,6 +16,9 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" neovim slowness
+set noshowcmd
+set noruler
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -230,15 +233,6 @@ map 0 ^
 " split line at cursor when pressing capital K. replaces man help for word under cursor
 nnoremap K i<CR><Esc>
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ag searching and cope displaying
 "    requires ag.vim - it's much better than vimgrep/grep
@@ -296,10 +290,6 @@ map <leader>bh :e ~/.zsh_history<cr>
 
 " Quickly open a markdown buffer for scribble
 map <leader>bm :e ~/buffer.md<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

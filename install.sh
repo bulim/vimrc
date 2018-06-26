@@ -15,7 +15,6 @@ source ~/.vim_runtime3/vimrcs/extended/abbreviations.vim
 source ~/.vim_runtime3/vimrcs/extended/undo.vim
 source ~/.vim_runtime3/vimrcs/extended/move-line.vim
 
-source ~/.vim_runtime3/vimrcs/filetypes/coffee.vim
 source ~/.vim_runtime3/vimrcs/filetypes/javascript.vim
 source ~/.vim_runtime3/vimrcs/filetypes/json.vim
 source ~/.vim_runtime3/vimrcs/filetypes/python.vim
