@@ -54,7 +54,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Ale linters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'], 
+\   'javascript': ['eslint'], 
 \   'python': ['autopep8', 'yapf']
 \}
 let g:ale_linters = {

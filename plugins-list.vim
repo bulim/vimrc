@@ -1,13 +1,3 @@
-" function! BuildYCM(info)
-"   " info is a dictionary with 3 fields
-"   " - name:   name of the plugin
-"   " - status: 'installed', 'updated', or 'unchanged'
-"   " - force:  set on PlugInstall! or PlugUpdate!
-"   if a:info.status == 'installed' || a:info.force
-"     !/Users/daniel.zinger/.pyenv/versions/ycm/bin/python ./install.py --tern-completer
-"   endif
-" endfunction
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
@@ -19,7 +9,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-abolish'

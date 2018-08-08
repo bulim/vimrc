@@ -15,7 +15,6 @@ let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
 " override behaviour from plugins config
-let g:ycm_goto_buffer_command = 'same-buffer'
 silent! colorscheme monokai
 
 let updatetime=4000
