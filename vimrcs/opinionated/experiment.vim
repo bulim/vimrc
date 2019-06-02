@@ -26,8 +26,7 @@ let g:loaded_youcompleteme = 1
 let g:jedi#auto_initialization = 0
 
 " let g:jedi#force_py_version = 3
-
-let g:python3_host_prog='/Users/moezamski/.virtualenvs/ce/bin/python3'
+let g:python3_host_prog='/usr/local/bin/python3'
 
 
 """"""""""""""""""""""""""""""
@@ -53,6 +52,12 @@ autocmd BufRead,BufNewFile   *.go nnoremap gr :GoReferrers<cr>
 autocmd BufRead,BufNewFile   *.go nnoremap gd :GoDef<cr>
 
 autocmd FileType python map <leader>y :call Flake8()<CR>
+
+
+""""""""""""""""""""""""""""""
+" => type-script
+""""""""""""""""""""""""""""""
+let g:typescript_indent_disable = 1
 
 
 """"""""""""""""""""""""""""""
