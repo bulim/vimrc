@@ -82,3 +82,11 @@ nnoremap <silent> ,C :call CleanNoNameEmptyBuffers()<CR>
 "set textwidth=0 wrapmargin=0
 
 echom "Successfully applied experiment.vim"
+
+""""""""""""""""""""
+
+augroup twig_ft
+  au!
+  au BufRead,BufNewFile *.qtpl set filetype=qtpl
+  au BufNewFile,BufRead *.qtpl set syntax=html
+augroup END
