@@ -40,10 +40,12 @@ Plug 'mattn/emmet-vim', { 'commit': 'f4b097a' }
 Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
 Plug 'nvie/vim-flake8', { 'tag': '1.6' }
 Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
-Plug 'fatih/vim-go', { 'tag': 'v1.8', 'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoInstallBinaries'}
 Plug 'mxw/vim-jsx', { 'commit': 'eb656ed'}
 Plug 'davidhalter/jedi-vim', { 'commit': '0c6a2b7'}
 Plug 'vim-python/python-syntax', { 'commit': '58d6e01'}
+Plug 'tomlion/vim-solidity', { 'commit': '569bbbe' }
+Plug 'leafgarland/typescript-vim', { 'commit': '0e9d92e' }
 " Plug 'python-rope/ropevim', { 'commit': 'ab87505'}
 
 " snippets plugins
