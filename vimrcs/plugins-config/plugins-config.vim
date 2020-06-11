@@ -87,6 +87,7 @@ let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.eslintrc"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_cs_checkers = ['code_checker']
 
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 

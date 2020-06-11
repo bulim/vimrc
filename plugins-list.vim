@@ -46,6 +46,7 @@ Plug 'davidhalter/jedi-vim', { 'commit': '0c6a2b7'}
 Plug 'vim-python/python-syntax', { 'commit': '58d6e01'}
 Plug 'tomlion/vim-solidity', { 'commit': '569bbbe' }
 Plug 'leafgarland/typescript-vim', { 'commit': '0e9d92e' }
+Plug 'OmniSharp/omnisharp-vim', {'commit': '33b320d' }
 " Plug 'python-rope/ropevim', { 'commit': 'ab87505'}
 
 " snippets plugins
