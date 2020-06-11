@@ -19,6 +19,7 @@ source ~/.vim_runtime3/vimrcs/filetypes/javascript.vim
 source ~/.vim_runtime3/vimrcs/filetypes/json.vim
 source ~/.vim_runtime3/vimrcs/filetypes/python.vim
 source ~/.vim_runtime3/vimrcs/filetypes/go.vim
+source ~/.vim_runtime3/vimrcs/filetypes/csharp.vim
 
 source ~/.vim_runtime3/vimrcs/plugins-config/plugins-config.vim
 
