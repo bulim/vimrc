@@ -1,5 +1,0 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>e :e! ~/.vim_runtime3/vimrcs/opinionated/my_configs.vim<cr>
-autocmd! bufwritepost vimrc source ~/.vim_runtime3/opinionated/vimrcs/my_configs.vim

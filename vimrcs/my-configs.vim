@@ -10,17 +10,28 @@ set cursorline
 set number    
 set noeol
 
-" based on the following link: https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+" if has("mac")
+"   set nocursorline
+"
+"   if exists("+relativenumber")
+"     set norelativenumber
+"   endif
+"
+"   set foldlevel=0
+"   set foldmethod=manual
+" endif
 
-" override behaviour from plugins config
-let g:ycm_goto_buffer_command = 'same-buffer'
-silent! colorscheme monokai
-
-let updatetime=4000
+" let updatetime=300
+" au CursorHold * silent! update
+" Autosave only when there is something to save. Always saving makes build
+" watchers crazy
+function! SaveIfUnsaved()
+    if &modified
+        :silent! w
+    endif
+endfunction
+au FocusLost,BufLeave,CursorHold * :call SaveIfUnsaved()
+" Read the file on focus/buffer enter
+au FocusGained,BufEnter * :silent! !
 
 nnoremap Q @q
-
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-

@@ -7,7 +7,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=10000
-set shada=!,'1000,<50,s10,h
 set shell=zsh\ -l
 " Enable filetype plugins
 filetype plugin on
@@ -35,7 +34,7 @@ map <leader>q :q<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -116,14 +115,7 @@ set foldcolumn=1
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
-
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
+syntax on
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -194,15 +186,6 @@ map <c-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -222,13 +205,15 @@ set laststatus=2
 
 " Format the status line
 " Not used when airline plugin is enabled
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline^=%{coc#status()}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
-map 0 ^
+noremap 0 ^
+noremap ^ 0
 
 " split line at cursor when pressing capital K. replaces man help for word under cursor
 nnoremap K i<CR><Esc>
@@ -248,17 +233,6 @@ vnoremap <silent> <leader>g :call VisualSelection('gv', '')<CR>
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 vnoremap <silent> <leader>f :call VisualSelection('f', '')<CR>
 
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with Ag, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
@@ -269,21 +243,18 @@ map <leader>p :cp<cr>
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+" map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+" map <leader>sn ]s
+" map <leader>sp [s
+" map <leader>sa zg
+" map <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
 " Quickly open a buffer for scribble
 map <leader>bs :e ~/buffer<cr>
 map <leader>bh :e ~/.zsh_history<cr>
@@ -297,7 +268,7 @@ map <leader>bm :e ~/buffer.md<cr>
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
-    unmenu Foo
+    unmenu foo
 endfunction 
 
 function! VisualSelection(direction, extra_filter) range
