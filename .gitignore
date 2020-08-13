@@ -2,3 +2,4 @@ temp_dirs
 vimrcs/.secrets.vim
 vimrcs/plugins-config/snapshots/
 tags
+Session.vim
