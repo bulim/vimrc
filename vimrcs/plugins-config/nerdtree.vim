@@ -13,6 +13,6 @@ nmap <A-L> :NERDTreeFind<CR>
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-
+let g:NERDTreeNodeDelimiter = "\u00a0"
 " related to fern
 let g:fern#renderer = "nerdfont"
