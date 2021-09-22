@@ -5,9 +5,11 @@ map <leader>o :Buffers<cr>
 map <leader>s :Rg<cr>
 map <leader>m :Files ~/workspace/<cr>
 map <leader>f :Files<cr>
-map <leader>ff :Files ~/workspace
+" uncomment after testing out telescope
+" map <leader>ff :Files ~/workspace
 nnoremap <leader>mm :cd ~/workspace<cr>:Rg<cr>
 nnoremap <leader>h :History<cr>
+nnoremap <leader>hh :History:<cr>
 
 
 nmap <Leader>/ <Plug>RgRawSearch

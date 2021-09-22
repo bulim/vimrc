@@ -3,7 +3,19 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Auto save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" augroup autosavefiles
+"     autocmd!
+"     autocmd TextChanged,TextChangedI,InsertLeave * silent write
+" augroup END
+
 augroup autosavefiles
     autocmd!
-    autocmd TextChanged,TextChangedI,InsertLeave <buffer> silent write
+    autocmd CursorHold * silent update
 augroup END
+" augroup autosavefiles
+"     autocmd! CursorHold <buffer>
+"     autocmd CursorHold <buffer> silent update
+" augroup END
+" 
+" test 2 test 3 test 
+" set autowrite

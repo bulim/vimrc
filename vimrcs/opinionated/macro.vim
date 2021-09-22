@@ -1,0 +1,2 @@
+nnoremap Q @q
+

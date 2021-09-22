@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'pbogut/fzf-mru.vim'
+Plug 'ojroques/nvim-lspfuzzy'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomtom/tcomment_vim'
@@ -16,6 +16,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
+Plug 'zhou13/vim-easyescape'
+Plug 'diepm/vim-rest-console'
+Plug 'vimwiki/vimwiki'
+Plug 'justinmk/vim-gtfo'
+
 " Uncomment
 " Plug 'junegunn/gv.vim'
 " Plug 'jesseleite/vim-agriculture'
@@ -25,7 +30,7 @@ Plug 'justinmk/vim-sneak'
 "
 " Plug 'editorconfig/editorconfig-vim'
 " Plug 'majutsushi/tagbar'
-" Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 " Plug 'vim-airline/vim-airline'| Plug 'vim-airline/vim-airline-themes'
 " Plug 'tpope/vim-rhubarb'
 " Plug 'airblade/vim-gitgutter'
@@ -39,6 +44,25 @@ Plug 'justinmk/vim-sneak'
 " Uncomment
 
 
+" requires nvim 0.5.0
+if has('nvim-0.5')
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'aca/completion-tabnine', { 'do': 'version=3.1.9 ./install.sh' }
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
+  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+endif
+
+
+" Plug 'neovim/nvim-lspconfig', {'on': 'LspInfo'}
+" Plug 'nvim-lua/completion-nvim', {'on': 'CompletionToggle'}
+" Plug 'nvim-treesitter/nvim-treesitter', { 'on': 'TSConfigInfo', 'do': ':TSUpdate'}
+" Plug 'npxbr/glow.nvim', {'on': 'Glow', 'do': ':GlowInstall'}
+" Plug 'norcalli/nvim-colorizer.lua', {'on': 'ColorizerToggle'}
 
 " Language syntax plugins
 " **********
@@ -74,7 +98,8 @@ Plug 'justinmk/vim-sneak'
 "  test coc.nvim  "
 """""""""""""""""""
 " Uncomment
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 " Uncomment
 
 " Highlighting
@@ -92,6 +117,7 @@ Plug 'justinmk/vim-sneak'
 " Plug 'sickill/vim-monokai'
 " Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 " Uncomment
 
 
@@ -132,4 +158,5 @@ Plug 'joshdick/onedark.vim'
 " Plug 'othree/yajs.vim'
 " Plug 'jistr/vim-nerdtree-tabs'
 " Plug 'w0rp/ale'
+" Plug 'pbogut/fzf-mru.vim'
 call plug#end()

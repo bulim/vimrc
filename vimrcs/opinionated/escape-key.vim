@@ -2,7 +2,7 @@
 " map escape key
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-imap kj <Esc>
+" imap kj <Esc>
 
 if has('nvim')
   tnoremap kj <C-\><C-n>

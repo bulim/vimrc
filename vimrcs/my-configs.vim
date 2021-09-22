@@ -33,5 +33,3 @@ endfunction
 au FocusLost,BufLeave,CursorHold * :call SaveIfUnsaved()
 " Read the file on focus/buffer enter
 au FocusGained,BufEnter * :silent! !
-
-nnoremap Q @q

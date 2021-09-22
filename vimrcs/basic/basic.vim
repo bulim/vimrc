@@ -14,6 +14,7 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
+set updatetime=1000
 
 " neovim slowness
 set noshowcmd
@@ -299,3 +300,16 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+if has('macunix')
+  function! OpenURLUnderCursor()
+    let s:uri = matchstr(getline('.'), '[a-z]*:\/\/[^ >,;()]*')
+    let s:uri = shellescape(s:uri, 1)
+    if s:uri != ''
+      silent exec "!open '".s:uri."'"
+      :redraw!
+    endif
+  endfunction
+  nnoremap gxm :call OpenURLUnderCursor()<CR>
+endif
+

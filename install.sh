@@ -33,6 +33,7 @@ try
   source ~/.vim_runtime3/vimrcs/opinionated/escape-key.vim
   source ~/.vim_runtime3/vimrcs/opinionated/yank.vim
   source ~/.vim_runtime3/vimrcs/opinionated/terminal.vim
+  source ~/.vim_runtime3/vimrcs/opinionated/macro.vim
 
   " plugins
   source ~/.vim_runtime3/vimrcs/plugins-config/nerdtree.vim
@@ -42,6 +43,7 @@ try
   source ~/.vim_runtime3/vimrcs/plugins-config/sneak.vim
   source ~/.vim_runtime3/vimrcs/plugins-config/rooter.vim
   source ~/.vim_runtime3/vimrcs/plugins-config/autosave.vim
+  source ~/.vim_runtime3/vimrcs/plugins-config/vimwiki.vim
 
   source ~/.vim_runtime3/vimrcs/opinionated/colorscheme.vim
   " source ~/.vim_runtime3/vimrcs/onedark.vim
