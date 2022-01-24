@@ -1,13 +1,3 @@
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.py --tern-completer
-  endif
-endfunction
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim', { 'tag': '1.0.9' }
@@ -15,7 +5,6 @@ Plug 'jasoncodes/ctrlp-modified.vim', { 'tag': 'v0.1.0' } | Plug 'kien/ctrlp.vim
 Plug 'scrooloose/nerdtree', { 'tag': '5.0.0' } | Plug 'jistr/vim-nerdtree-tabs', { 'tag': 'v1.4.6'} "| Plug 'Xuyuanp/nerdtree-git-plugin', { 'commit': 'e71e62f' }  removed since https://github.com/scrooloose/syntastic/issues/1391
 Plug 'junegunn/goyo.vim', { 'tag': '1.6.0' }
 Plug 'scrooloose/syntastic', { 'commit': '32a3754' }
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 Plug 'majutsushi/tagbar', { 'tag': 'v2.6.1' }
 Plug 'tomtom/tcomment_vim', { 'tag': 'v201' }
@@ -33,26 +22,32 @@ Plug 'ervandew/supertab', { 'commit': 'cdaa5c2' }
 Plug 'editorconfig/editorconfig-vim', { 'commit': '0abb063' }
 
 " languages plugins
-Plug 'moll/vim-node', { 'tag': 'v0.8.1'}
-Plug 'pangloss/vim-javascript', { 'tag': 'v1.1.3'}
-Plug 'othree/yajs.vim', { 'tag': '1.6'}
-Plug 'mattn/emmet-vim', { 'commit': 'f4b097a' }
-Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
-Plug 'nvie/vim-flake8', { 'tag': '1.6' }
-Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
-Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoInstallBinaries'}
-Plug 'mxw/vim-jsx', { 'commit': 'eb656ed'}
-Plug 'davidhalter/jedi-vim', { 'commit': '0c6a2b7'}
-Plug 'vim-python/python-syntax', { 'commit': '58d6e01'}
-Plug 'tomlion/vim-solidity', { 'commit': '569bbbe' }
-Plug 'leafgarland/typescript-vim', { 'commit': '0e9d92e' }
-Plug 'OmniSharp/omnisharp-vim', {'commit': '33b320d' }
-" Plug 'python-rope/ropevim', { 'commit': 'ab87505'}
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.0'}
+Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': 'ebdfc20'}
+Plug 'hrsh7th/nvim-cmp', { 'commit': '7cb14b0'}
 
-" snippets plugins
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
+" Plug 'moll/vim-node', { 'tag': 'v0.8.1'}
+" Plug 'pangloss/vim-javascript', { 'tag': 'v1.1.3'}
+" Plug 'othree/yajs.vim', { 'tag': '1.6'}
+" Plug 'mattn/emmet-vim', { 'commit': 'f4b097a' }
+" Plug 'groenewege/vim-less', { 'commit': '6e818d5'}
+" Plug 'nvie/vim-flake8', { 'tag': '1.6' }
+" Plug 'chase/vim-ansible-yaml', { 'tag': 'v1.0' }
+
+" To support auto-format on save
+Plug 'fatih/vim-go', { 'tag': 'v1.23', 'do': ':GoUpdateBinaries'}
+" Plug 'mxw/vim-jsx', { 'commit': 'eb656ed'}
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip', { 'commit': '0abfa18'}
+Plug 'hrsh7th/vim-vsnip', { 'commit': '7fde9c0'}
+Plug 'rafamadriz/friendly-snippets', { 'commit': 'a8efb53'}
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', { 'tag': '1.0.0' }
 
 " color scheme
 Plug 'chriskempson/vim-tomorrow-theme', { 'commit': 'f45a2ca' }
+
+" https://editorconfig.org/
+Plug 'editorconfig/editorconfig-vim', { 'commit': '0a3c1d8' }
 
 call plug#end()
